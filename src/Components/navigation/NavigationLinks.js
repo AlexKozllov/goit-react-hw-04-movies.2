@@ -4,19 +4,20 @@ import { NavLink } from "react-router-dom";
 
 const NavigationLinks = () => {
   return (
-    <>
+    <ul>
       {mainRoutes.map((route) => (
-        <NavLink
-          key={route.path}
-          to={route.path}
-          exact={route.exact}
-          className=""
-          activeClassName=""
-        >
-          {route.name}
-        </NavLink>
+        <li key={route.path}>
+          <NavLink
+            to={route.path}
+            exact={route.exact}
+            className=""
+            activeClassName=""
+          >
+            {route.name}
+          </NavLink>
+        </li>
       ))}
-    </>
+    </ul>
   );
 };
 

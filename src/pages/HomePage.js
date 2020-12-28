@@ -1,32 +1,40 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Route, Switch } from "react-router-dom";
-import axios from "axios";
+import {
+  NavLink,
+  Route,
+  Switch,
+  useLocation,
+  withRourer,
+} from "react-router-dom";
+import {
+  getTrending,
+  searchMovies,
+  getMovieDetails,
+  getMovieCredits,
+  getMovieReviews,
+} from "../services/getData";
 
-const Home = () => {
-  const [movies, setMovies] = useState([]);
+const Home = (props) => {
+  const [trendingMovies, setTrendingMovies] = useState([]);
   useEffect(() => {
-    // Обновляем заголовок документа, используя API браузера
-    axios
-      .get(
-        "https://api.themoviedb.org/3/trending/movie/day?api_key=6d4314c3991bf14e2dde598365e18999"
-      )
-      .then((response) => {
-        // handle success
-        setMovies([...response.data.results]);
-        // console.log(movies);
+    getTrending()
+      .then((movies) => {
+        setTrendingMovies([...movies]);
       })
-      .catch(function (error) {
-        // handle error
-        // console.log(error);
-      });
+      .catch((error) => console.log(error));
   }, []);
 
   return (
     <ul>
-      {movies.map((item) => {
+      {/* {console.log(searchMovies("cat"))} */}
+      {/* {console.log(getMovieDetails("614911"))} */}
+      {/* {console.log(getMovieCredits("614911"))} */}
+      {/* {console.log(getMovieReviews("120"))} */}
+
+      {trendingMovies.map((item) => {
         return (
           <li key={item.id}>
-            <NavLink to={`/${item.id}`} exact={true}>
+            <NavLink to={`/movies/${item.id}`} exact={true}>
               {item.original_title}
             </NavLink>
           </li>

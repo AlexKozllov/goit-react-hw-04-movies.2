@@ -4,8 +4,8 @@ const Cast = (props) => {
   const goHome = () => {
     props.history.push({
       pathname: "/",
-      search: "?category=adventure",
-      hash: "#treasure-island",
+      // search: "?category=adventure",
+      // hash: "#treasure-island",
       state: { from: props.location.pathname },
     });
   };
