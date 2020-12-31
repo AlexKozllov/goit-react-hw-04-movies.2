@@ -1,18 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {
-  NavLink,
-  Route,
-  Switch,
-  useLocation,
-  withRourer,
-} from "react-router-dom";
-import {
-  getTrending,
-  searchMovies,
-  getMovieDetails,
-  getMovieCredits,
-  getMovieReviews,
-} from "../services/getData";
+import { NavLink } from "react-router-dom";
+import { getTrending } from "../services/getData";
 
 const Home = (props) => {
   const [trendingMovies, setTrendingMovies] = useState([]);

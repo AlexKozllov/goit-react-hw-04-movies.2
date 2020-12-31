@@ -9,8 +9,9 @@ export const mainRoutes = [
       import("../pages/HomePage" /* webpackChunkName: "home" */)
     ),
   },
+
   {
-    path: "/movies",
+    path: "/movies/:moviesId",
     exact: false,
     name: "Movies",
     component: lazy(() =>
