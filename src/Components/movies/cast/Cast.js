@@ -13,6 +13,7 @@ const Cast = (props) => {
   // console.log("props.match.params.moviesId", props.match.params.moviesId);
   // props.match.params.moviesId && setMoviesId(props.match.params.moviesId);
   useEffect(() => {
+    console.log("props", props);
     // getMovieCredits(moviesId)
     getMovieCredits("614911")
       .then((credits) => {
@@ -36,7 +37,7 @@ const Cast = (props) => {
       <button onClick={goHome}>Go home</button>
       <ul>
         {moviesCredits.map((item) => {
-          console.log("item", item);
+          // console.log("item", item);
           return (
             <CastList key={item.id}>
               <img

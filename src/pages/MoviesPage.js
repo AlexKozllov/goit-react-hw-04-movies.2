@@ -20,7 +20,7 @@ const MoviesPage = (props) => {
           />
         </Switch>
       </div>
-      <ul>
+      {/* <ul>
         <Suspense fallback={<Loader />}>
           {moviesRoutes.map((route) => {
             console.log("MoviesPage info", props.match.url);
@@ -56,7 +56,7 @@ const MoviesPage = (props) => {
             ))}
           </Switch>
         </Suspense>
-      </div>
+      </div> */}
     </>
   );
 };
